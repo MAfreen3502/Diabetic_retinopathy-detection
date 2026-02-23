@@ -1,0 +1,81 @@
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+}
+
+/* background and center */
+.login-container{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background-image: url("../images/dr-bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* form box */
+.login-box{
+    width:320px;
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    display:flex;
+    flex-direction:column;
+}
+
+/* inputs in vertical format */
+.login-box input{
+    padding:10px;
+    margin:8px 0;
+    font-size:14px;
+}
+
+/* button */
+.login-box button{
+    padding:10px;
+    margin-top:10px;
+    background:#2b6cff;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.login-box h2{
+    text-align:center;
+}
+
+.link{
+    text-align:center;
+    margin-top:12px;
+}
+.main-title{
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:20px;
+    text-align:center;
+    background:rgba(0,0,0,0.5);
+    padding:10px 15px;
+    border-radius:6px;
+}
+.upload-box h2{
+    text-align:center;
+}
+
+.upload-box img{
+    margin:10px auto;
+    border-radius:6px;
+    border:1px solid #ddd;
+}
+
+#loading{
+    text-align:center;
+    font-size:14px;
+    color:#333;
+}

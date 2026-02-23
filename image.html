@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Retinal Image</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="login-container">
+
+    <form class="login-box upload-box">
+
+        <h2>Upload Retinal / Fundus Image</h2>
+
+        <input type="file" id="imageInput" accept="image/*">
+
+        <img id="preview" width="220" style="display:none;">
+
+        <p id="loading"></p>
+
+        <button type="button" onclick="uploadImage()">Predict</button>
+
+    </form>
+
+</div>
+
+<script src="js/upload.js"></script>
+</body>
+</html>
