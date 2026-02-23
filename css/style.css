@@ -1,103 +1,123 @@
-body{ background:red !important; }
+/* ---------- Base ---------- */
+
 body{
-    margin:0;
-    padding:0;
-    min-height:100vh;
+    margin: 0;
     font-family: Arial, sans-serif;
 }
 
-/* main background and center layout */
+
+/* ---------- Background + Center Layout ---------- */
+
 .login-container{
-    min-height:100vh;
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    min-height: 100vh;
 
-    background-image:
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
         linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url("../images/dr-bg.jpg");
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+        url("../Images/dr-bg.jpg") center / cover no-repeat;
 }
 
-/* main heading */
+
+/* ---------- Top Title ---------- */
+
 .main-title{
-    color:white;
-    font-size:22px;
-    font-weight:bold;
-    margin-bottom:20px;
-    text-align:center;
-    background:rgba(0,0,0,0.5);
-    padding:10px 15px;
-    border-radius:6px;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+
+    background: rgba(0,0,0,0.6);
+    padding: 10px 15px;
+    border-radius: 6px;
 }
 
-/* login / register / upload box */
-.login-box,
-.upload-box{
-    width:320px;
-    background:white;
-    padding:30px;
-    border-radius:8px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-    display:flex;
-    flex-direction:column;
+
+/* ---------- Login Box ---------- */
+
+.login-box{
+    width: 320px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+
+    display: flex;
+    flex-direction: column;
 }
 
-/* headings inside box */
-.login-box h2,
-.upload-box h2{
-    text-align:center;
-    margin-bottom:15px;
+
+/* ---------- Heading ---------- */
+
+.login-box h2{
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-/* inputs vertical */
-.login-box input,
-.upload-box input{
-    padding:10px;
-    margin:8px 0;
-    font-size:14px;
+
+/* ---------- Inputs ---------- */
+
+.login-box input{
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-/* buttons */
-.login-box button,
-.upload-box button{
-    padding:10px;
-    margin-top:12px;
-    background:#2b6cff;
-    color:white;
-    border:none;
-    border-radius:4px;
-    cursor:pointer;
-    font-size:15px;
+
+/* ---------- Button ---------- */
+
+.login-box button{
+    padding: 10px;
+    margin-top: 12px;
+
+    background: #2b6cff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+
+    cursor: pointer;
+    font-size: 15px;
 }
 
-.login-box button:hover,
-.upload-box button:hover{
-    background:#1f57d6;
+.login-box button:hover{
+    background: #1f55d8;
 }
 
-/* link under login */
+
+/* ---------- Register link ---------- */
+
 .link{
-    text-align:center;
-    margin-top:12px;
+    text-align: center;
+    margin-top: 12px;
 }
 
-/* preview image */
+
+/* ---------- Upload page (for your image upload page also) ---------- */
+
+.upload-box h2{
+    text-align: center;
+}
+
 .upload-box img{
-    margin:10px auto;
-    border-radius:6px;
-    border:1px solid #ddd;
-    max-width:100%;
+    display: block;
+    margin: 10px auto;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    max-width: 100%;
 }
 
-/* loading text */
+
+/* ---------- Loading text ---------- */
+
 #loading{
-    text-align:center;
-    font-size:14px;
-    color:#333;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
 }
