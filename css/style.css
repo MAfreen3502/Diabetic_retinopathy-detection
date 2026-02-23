@@ -1,59 +1,30 @@
+body{ background:red !important; }
 body{
     margin:0;
+    padding:0;
+    min-height:100vh;
     font-family: Arial, sans-serif;
 }
 
-/* background and center */
+/* main background and center layout */
 .login-container{
-    height:100vh;
+    min-height:100vh;
+    width:100%;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
 
-    background-image: url("../images/dr-bg.jpg");
-    background-size: cover;
-    background-position: center;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("../images/dr-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
-
-/* form box */
-.login-box{
-    width:320px;
-    background:white;
-    padding:30px;
-    border-radius:8px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    display:flex;
-    flex-direction:column;
-}
-
-/* inputs in vertical format */
-.login-box input{
-    padding:10px;
-    margin:8px 0;
-    font-size:14px;
-}
-
-/* button */
-.login-box button{
-    padding:10px;
-    margin-top:10px;
-    background:#2b6cff;
-    color:white;
-    border:none;
-    cursor:pointer;
-    font-size:15px;
-}
-
-.login-box h2{
-    text-align:center;
-}
-
-.link{
-    text-align:center;
-    margin-top:12px;
-}
+/* main heading */
 .main-title{
     color:white;
     font-size:22px;
@@ -64,16 +35,67 @@ body{
     padding:10px 15px;
     border-radius:6px;
 }
-.upload-box h2{
-    text-align:center;
+
+/* login / register / upload box */
+.login-box,
+.upload-box{
+    width:320px;
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    display:flex;
+    flex-direction:column;
 }
 
+/* headings inside box */
+.login-box h2,
+.upload-box h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+/* inputs vertical */
+.login-box input,
+.upload-box input{
+    padding:10px;
+    margin:8px 0;
+    font-size:14px;
+}
+
+/* buttons */
+.login-box button,
+.upload-box button{
+    padding:10px;
+    margin-top:12px;
+    background:#2b6cff;
+    color:white;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.login-box button:hover,
+.upload-box button:hover{
+    background:#1f57d6;
+}
+
+/* link under login */
+.link{
+    text-align:center;
+    margin-top:12px;
+}
+
+/* preview image */
 .upload-box img{
     margin:10px auto;
     border-radius:6px;
     border:1px solid #ddd;
+    max-width:100%;
 }
 
+/* loading text */
 #loading{
     text-align:center;
     font-size:14px;
