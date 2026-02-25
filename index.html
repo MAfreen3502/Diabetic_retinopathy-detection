@@ -12,7 +12,7 @@
         Detecting Diabetic Retinopathy using EfficientNet and ResNet
     </div>
 
-
+    <!-- LOGIN FORM -->
     <form id="loginForm" class="login-box">
         <h2>Patient Login</h2>
 
@@ -28,8 +28,63 @@
         </p>
     </form>
 
+
+    <!-- PREDICTION SECTION (hidden first) -->
+    <div id="predictSection" style="display:none; margin-top:20px;">
+
+        <h2>Upload Retina Image</h2>
+
+        <input type="file" id="imageInput" accept="image/*">
+        <br><br>
+
+        <button onclick="predictImage()">Predict</button>
+
+        <p id="result"></p>
+
+    </div>
+
 </div>
 
-<script src="js/login.js"></script>
+
+<script>
+/* ---------- Login (just show prediction area) ---------- */
+
+document.getElementById("loginForm").addEventListener("submit", function(e){
+    e.preventDefault();   // stop page reload
+
+    // You are not validating now (only demo login)
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("predictSection").style.display = "block";
+});
+
+
+/* ---------- Predict API call ---------- */
+
+async function predictImage(){
+
+    const fileInput = document.getElementById("imageInput");
+    const file = fileInput.files[0];
+
+    if(!file){
+        alert("Please select an image");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("image", file);   // must be 'image'
+
+    const response = await fetch("http://127.0.0.1:5000/predict", {
+        method: "POST",
+        body: formData
+    });
+
+    const data = await response.json();
+
+    document.getElementById("result").innerText =
+        "Predicted Class : " + data.predicted_class +
+        " | Confidence : " + data.confidence;
+}
+</script>
+
 </body>
 </html>
