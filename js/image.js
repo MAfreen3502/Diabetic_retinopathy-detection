@@ -3,11 +3,13 @@ const preview = document.getElementById("preview");
 
 imageInput.addEventListener("change", function () {
     const file = imageInput.files[0];
-   preview.src = URL.createObjectURL(file);
-   preview.style.display = "block";
+    if(file){
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+    }
 });
-function uploadImage(){
 
+window.uploadImage = function() {
     const file = imageInput.files[0];
 
     if(!file){
@@ -17,22 +19,13 @@ function uploadImage(){
 
     document.getElementById("loading").innerText = "Predicting...";
 
-    const formData = new FormData();
-    formData.append("image", file);
+    // TEMPORARY: Fake prediction for GitHub Pages
+    setTimeout(() => {
+        document.getElementById("loading").innerText = "";
+        preview.style.display = "none";
 
-    fetch("http://localhost:5000/predict", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-
-        localStorage.setItem("prediction", data.result);
+        // Store fake prediction in localStorage and redirect to result page
+        localStorage.setItem("prediction", "No DR detected");
         window.location.href = "result.html";
-
-    })
-    .catch(error => {
-        alert("Error in prediction");
-        console.log(error);
-    });
+    }, 1000); // simulate 1-second processing delay
 }
