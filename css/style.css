@@ -5,7 +5,6 @@ body{
     font-family: Arial, sans-serif;
 }
 
-
 /* ---------- Background + Center Layout ---------- */
 
 .login-container{
@@ -17,107 +16,129 @@ body{
     justify-content: center;
 
     background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), /* darker overlay */
         url("../Images/dr-bg.jpg") center / cover no-repeat;
-}
 
+    padding: 20px;
+}
 
 /* ---------- Top Title ---------- */
 
 .main-title{
     color: #ffffff;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
 
-    background: rgba(0,0,0,0.6);
-    padding: 10px 15px;
-    border-radius: 6px;
+    background: rgba(0,0,0,0.7);
+    padding: 12px 18px;
+    border-radius: 8px;
 }
 
+/* ---------- Login & Upload Box (Unified Style) ---------- */
 
-/* ---------- Login Box ---------- */
-
-.login-box{
-    width: 320px;
+.login-box,
+.upload-box{
+    width: 350px;
     background: #ffffff;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 10px;
 
-    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 
     display: flex;
     flex-direction: column;
 }
 
+/* ---------- Headings ---------- */
 
-/* ---------- Heading ---------- */
-
-.login-box h2{
+.login-box h2,
+.upload-box h2{
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
-
 
 /* ---------- Inputs ---------- */
 
-.login-box input{
+.login-box input,
+.upload-box input{
     padding: 10px;
     margin: 8px 0;
     font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
+/* ---------- Buttons ---------- */
 
-/* ---------- Button ---------- */
-
-.login-box button{
+.login-box button,
+.upload-box button{
     padding: 10px;
     margin-top: 12px;
 
     background: #2b6cff;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
 
     cursor: pointer;
     font-size: 15px;
+    transition: 0.3s ease;
 }
 
-.login-box button:hover{
+.login-box button:hover,
+.upload-box button:hover{
     background: #1f55d8;
 }
-
 
 /* ---------- Register link ---------- */
 
 .link{
     text-align: center;
     margin-top: 12px;
+    font-size: 14px;
 }
 
-
-/* ---------- Upload page (for your image upload page also) ---------- */
-
-.upload-box h2{
-    text-align: center;
-}
+/* ---------- Uploaded Image Preview ---------- */
 
 .upload-box img{
     display: block;
-    margin: 10px auto;
+    margin: 15px auto;
     border-radius: 6px;
     border: 1px solid #ddd;
     max-width: 100%;
 }
 
+/* ---------- Prediction Text ---------- */
+
+.prediction-result{
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #2b6cff;
+}
 
 /* ---------- Loading text ---------- */
 
 #loading{
     text-align: center;
     font-size: 14px;
-    color: #333;
+    margin-top: 10px;
+    color: #444;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 400px){
+    .login-box,
+    .upload-box{
+        width: 90%;
+        padding: 20px;
+    }
+
+    .main-title{
+        font-size: 18px;
+    }
 }
