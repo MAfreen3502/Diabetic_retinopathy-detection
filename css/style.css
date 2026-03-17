@@ -1,11 +1,23 @@
-/* ---------- Base ---------- */
+/* ---------- Base + Global Background ---------- */
 
 body{
     margin: 0;
     font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    /* SAME BACKGROUND FOR ENTIRE APP */
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("../images/retina.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* ---------- Background + Center Layout ---------- */
+
+/* ---------- Center Layout ---------- */
 
 .login-container{
     min-height: 100vh;
@@ -15,14 +27,11 @@ body{
     align-items: center;
     justify-content: center;
 
-    background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), /* darker overlay */
-        url("../Images/dr-bg.jpg") center / cover no-repeat;
-
     padding: 20px;
 }
 
-/* ---------- Top Title ---------- */
+
+/* ---------- Title ---------- */
 
 .main-title{
     color: #ffffff;
@@ -31,12 +40,13 @@ body{
     margin-bottom: 25px;
     text-align: center;
 
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.6);
     padding: 12px 18px;
     border-radius: 8px;
 }
 
-/* ---------- Login & Upload Box (Unified Style) ---------- */
+
+/* ---------- Login & Upload Box ---------- */
 
 .login-box,
 .upload-box{
@@ -51,6 +61,7 @@ body{
     flex-direction: column;
 }
 
+
 /* ---------- Headings ---------- */
 
 .login-box h2,
@@ -58,6 +69,7 @@ body{
     text-align: center;
     margin-bottom: 18px;
 }
+
 
 /* ---------- Inputs ---------- */
 
@@ -69,6 +81,7 @@ body{
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 
 /* ---------- Buttons ---------- */
 
@@ -92,6 +105,7 @@ body{
     background: #1f55d8;
 }
 
+
 /* ---------- Register link ---------- */
 
 .link{
@@ -99,6 +113,7 @@ body{
     margin-top: 12px;
     font-size: 14px;
 }
+
 
 /* ---------- Uploaded Image Preview ---------- */
 
@@ -110,6 +125,7 @@ body{
     max-width: 100%;
 }
 
+
 /* ---------- Prediction Text ---------- */
 
 .prediction-result{
@@ -120,7 +136,8 @@ body{
     color: #2b6cff;
 }
 
-/* ---------- Loading text ---------- */
+
+/* ---------- Loading ---------- */
 
 #loading{
     text-align: center;
@@ -129,9 +146,11 @@ body{
     color: #444;
 }
 
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 400px){
+
     .login-box,
     .upload-box{
         width: 90%;
@@ -141,4 +160,5 @@ body{
     .main-title{
         font-size: 18px;
     }
+
 }

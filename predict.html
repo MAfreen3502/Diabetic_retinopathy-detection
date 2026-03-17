@@ -2,99 +2,51 @@
 <html>
 <head>
     <title>Diabetic Retinopathy Prediction</title>
-    <style>
-        /* Full page background */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: url('Images/retina.png') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        /* Main container */
-        .container {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            text-align: center;
-            width: 350px;
-        }
-
-        h2 {
-            margin-bottom: 30px;
-            color: #333;
-        }
-
-        input[type="file"] {
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            width: 100%;
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 12px 25px;
-            border: none;
-            background-color: #1e90ff;
-            color: white;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background-color: #0d6efd;
-        }
-
-        #result {
-            margin-top: 25px;
-            font-weight: bold;
-            color: #444;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="container">
+<div class="login-container">
+
+    <div class="login-box upload-box">
+
         <h2>Upload Retina Image</h2>
+
         <input type="file" id="imageInput" accept="image/*">
+
         <button onclick="predict()">Predict</button>
-        <p id="result"></p>
+
+        <p id="result" class="prediction-result"></p>
+
     </div>
 
-    <script>
-        async function predict() {
-            const fileInput = document.getElementById("imageInput");
-            const file = fileInput.files[0];
+</div>
 
-            if(!file){
-                alert("Please select an image");
-                return;
-            }
+<script>
+async function predict() {
+    const fileInput = document.getElementById("imageInput");
+    const file = fileInput.files[0];
 
-            const formData = new FormData();
-            formData.append("image", file);
+    if(!file){
+        alert("Please select an image");
+        return;
+    }
 
-            const response = await fetch("http://127.0.0.1:5000/predict", {
-                method: "POST",
-                body: formData
-            });
+    const formData = new FormData();
+    formData.append("image", file);
 
-            const data = await response.json();
+    const response = await fetch("http://127.0.0.1:5000/predict", {
+        method: "POST",
+        body: formData
+    });
 
-            document.getElementById("result").innerText =
-                "Prediction: " + data.predicted_class +
-                " | Confidence: " + data.confidence;
-        }
-    </script>
+    const data = await response.json();
+
+    document.getElementById("result").innerText =
+        "Prediction: " + data.predicted_class +
+        " | Confidence: " + data.confidence;
+}
+</script>
 
 </body>
 </html>
